@@ -1,9 +1,9 @@
 <?php
 class PluginManager
 {
-    private $listeners = [];
+    private static $listeners = [];
 
-    function __construct()
+    public static function init()
     {
         $plugins = [
             [
@@ -11,9 +11,9 @@ class PluginManager
                 "enabled" => true
             ]
         ];
-        // 初始化插件
+        /** 初始化插件 */
         foreach ($plugins as $plugin) {
-            // 插件未启用，跳过初始化
+            /** 插件未启用，跳过初始化 */
             if (!$plugin['enabled']) {
                 continue;
             }
@@ -26,7 +26,7 @@ class PluginManager
             if (file_exists($pluginPath)) {
                 include_once $pluginPath;
                 if (class_exists($class)) {
-                    new $class($this);
+                    new $class();
                 }
             }
         }
@@ -39,10 +39,10 @@ class PluginManager
      * @param object $reference 当前类应用
      * @param string $method 插件方法名称
      */
-    public function register($hook, &$reference, $method)
+    public static function register($hook, &$reference, $method)
     {
-        $key = get_class($reference) . '::' . $method;
-        $this->listeners[$hook][$key] = [&$reference, $method];
+        $key = get_class($reference) . '->' . $method;
+        self::$listeners[$hook][$key] = [&$reference, $method];
     }
 
     /**
@@ -51,10 +51,11 @@ class PluginManager
      * @param string $hook 钩子名称
      * @param mixed $data 钩子参数
      */
-    public function trigger($hook, $data = '')
+    public static function trigger($hook, $data = '')
     {
-        if (isset($this->listeners[$hook])) {
-            foreach ($this->listeners[$hook] as $listener) {
+        // print_r(self::$listeners);
+        if (isset(self::$listeners[$hook])) {
+            foreach (self::$listeners[$hook] as $listener) {
                 $class = &$listener[0];
                 $method = $listener[1];
                 if (method_exists($class, $method)) {

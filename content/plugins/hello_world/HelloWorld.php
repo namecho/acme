@@ -1,9 +1,9 @@
 <?php
 class HelloWorld
 {
-    public function __construct($pluginManager)
+    public function __construct()
     {
-        $pluginManager->register('admin_navbar_console', $this, 'link');
+        pluginManager::register('admin_navbar_console', $this, 'link');
     }
 
     public function link()
