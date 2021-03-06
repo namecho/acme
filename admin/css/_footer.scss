@@ -1,0 +1,17 @@
+.footer {
+  .container {
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #666;
+    a {
+      color: #666;
+      text-decoration: none;
+      &:hover {
+        color: #333;
+        text-decoration: underline;
+      }
+    }
+  }
+}
