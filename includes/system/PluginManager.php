@@ -1,11 +1,10 @@
 <?php
-class Plugin
+class PluginManager
 {
     private $listeners = [];
 
     function __construct()
     {
-        // 获取插件配置
         $plugins = [
             [
                 "directory" => "hello_world",
