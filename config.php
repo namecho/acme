@@ -13,4 +13,5 @@ define('DB_PASSWORD', 'root');
 /** 数据库前缀 */
 define('DB_PREFIX', 'acme_');
 
+/** 插件目录 */
 define('PLUGIN_PATH', ROOT_PATH . 'content/plugins/');

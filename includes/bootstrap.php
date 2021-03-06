@@ -8,4 +8,4 @@ include ROOT_PATH . 'includes/system/WidgetManager.php';
 include ROOT_PATH . 'includes/system/PluginManager.php';
 
 include ROOT_PATH . 'includes/widgets/Init.php';
-include ROOT_PATH . 'includes/widgets/AdminFunctions.php';
+include ROOT_PATH . 'includes/widgets/Admin.php';
