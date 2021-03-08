@@ -1,5 +1,4 @@
-<?php
-
+<?php if (!defined('ROOT_PATH')) exit;
 /**
  * Medoo database framework
  * https://medoo.in

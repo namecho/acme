@@ -1,3 +1,4 @@
+<?php if (!defined('ROOT_PATH')) exit ?>
 <?php
 $func = WidgetManager::widget('Admin');
 ?>

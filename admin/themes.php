@@ -1,3 +1,4 @@
+<?php if (!defined('ROOT_PATH')) exit ?>
 <?php include "common.php" ?>
 <?php include "header.php" ?>
 <div class="container">

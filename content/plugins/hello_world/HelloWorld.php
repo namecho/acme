@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class HelloWorld
 {
     public function __construct()

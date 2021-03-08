@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class Init extends WidgetManager
 {
     /** 入口函数 */

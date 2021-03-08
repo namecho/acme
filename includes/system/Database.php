@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class Database
 {
     private static $instance = null;

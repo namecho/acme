@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 include ROOT_PATH . 'config.php';
 
 include ROOT_PATH . 'includes/libraries/Medoo.php';

@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class WidgetManager
 {
     /** widget 对象池 */

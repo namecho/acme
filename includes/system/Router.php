@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class Router
 {
     /** 全路径 */
@@ -9,30 +9,24 @@ class Router
     /** 解析路径 */
     public static function match()
     {
-        $uri = explode('/', self::getPathInfo());
-        array_shift($uri);
-        self::$route['controller'] = $uri[0] ? ucfirst(strtolower($uri[0])) : '';
-        self::$route['params'] = array_splice($uri, 1);
-        return self::$route;
+        self::$route = explode('/', self::getPathInfo());
+        array_shift(self::$route);
     }
 
     /** 路由分发 */
     public static function dispatch()
     {
-        self::match();
-        $controllerPath = ROOT_PATH . 'includes/controllers/' . self::$route['controller'] . '.php';
-        file_exists($controllerPath) && include $controllerPath;
-        if (class_exists(self::$route['controller'])) {
-            (new self::$route['controller']())->index(self::$route['params']);
-        } else {
-            self::noController();
-        }
-    }
 
-    private static function noController()
-    {
-        include ROOT_PATH . 'includes/controllers/No.php';
-        (new No())->index();
+        self::match();
+        $consrollerName = ucfirst(strtolower(self::$route[0]));
+        $consrollerPath = ROOT_PATH . 'includes/controllers/' . $consrollerName . '.php';
+        if (file_exists($consrollerPath)) {
+            include $consrollerPath;
+            (new $consrollerName())->index(array_splice(self::$route, 1));
+        } else {
+            include ROOT_PATH . 'includes/controllers/Home.php';
+            (new Home())->index(self::$route);
+        }
     }
 
     /**

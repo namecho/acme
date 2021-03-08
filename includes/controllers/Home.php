@@ -1,8 +1,13 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class Home extends Controller
 {
-    public function index()
+    public function index($param)
     {
-        echo '首页';
+        print_r($param);
+        include ROOT_PATH . 'content/themes/default/index.php';
+    }
+    public function say()
+    {
+        return 'hello';
     }
 }

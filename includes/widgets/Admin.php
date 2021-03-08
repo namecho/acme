@@ -1,4 +1,4 @@
-<?php
+<?php if (!defined('ROOT_PATH')) exit;
 class Admin extends WidgetManager
 {
     /** 后台菜单 focus */
