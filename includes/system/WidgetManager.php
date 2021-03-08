@@ -1,6 +1,9 @@
 <?php
 class WidgetManager
 {
+    /** widget 对象池 */
+    private static $widgetPool = [];
+
     /**
      * 工厂方法
      *
@@ -9,10 +12,15 @@ class WidgetManager
      */
     public static function widget($className, $params = null)
     {
-        /** 初始化组件 */
-        $widget = new $className($params);
-        $widget->execute();
-        return $widget;
+        /** 如果类不存在，初始化 */
+        if (!isset(self::$widgetPool[$className])) {
+            include ROOT_PATH . 'includes/widgets/' . $className . '.php';
+            /** 初始化组件 */
+            $widget = new $className($params);
+            $widget->execute();
+            self::$widgetPool[$className] = $widget;
+        }
+        return self::$widgetPool[$className];
     }
 
     public function execute()
