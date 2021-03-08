@@ -1,4 +1,3 @@
-<?php if (!defined('ROOT_PATH')) exit ?>
 <?php include "common.php" ?>
 <!DOCTYPE html>
 <html lang="zh-CN">
