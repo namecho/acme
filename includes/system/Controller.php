@@ -47,7 +47,7 @@ class Controller
     {
         $themeObject = WidgetManager::widget('Theme');
         if (method_exists($themeObject, $name)) {
-            $themeObject->$name(...$arguments);
+            $themeObject->$name($arguments);
         } else {
             exit("<br><b>Fatal error</b>: {$name} undefined<br>");
         }
