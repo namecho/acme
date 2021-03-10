@@ -1,5 +1,4 @@
 <?php if (!defined('ROOT_PATH')) exit ?>
-<?php $func = WidgetManager::widget('Admin') ?>
-<li class="nav-child-item<?php $func->focus('test') ?>">
+<li class="nav-child-item<?php menu_focus('test') ?>">
     <a class="nav-child-link" href="test.php">测试</a>
 </li>

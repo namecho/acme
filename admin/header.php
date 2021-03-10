@@ -1,7 +1,4 @@
 <?php if (!defined('ROOT_PATH')) exit ?>
-<?php
-$func = WidgetManager::widget('Admin');
-?>
 <!DOCTYPE html>
 <html lang="zh-CN">
 
@@ -17,54 +14,54 @@ $func = WidgetManager::widget('Admin');
     <nav class="navbar">
         <div class="container">
             <ul class="nav-list">
-                <li class="nav-item<?php $func->focus('console') ?>">
+                <li class="nav-item<?php menu_focus('console') ?>">
                     <a class="nav-link" href="index.php">控制台</a>
                     <ul class="nav-child">
-                        <li class="nav-child-item<?php $func->focus('index') ?>">
+                        <li class="nav-child-item<?php menu_focus('index') ?>">
                             <a class="nav-child-link" href="index.php">概要</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('themes') ?>">
+                        <li class="nav-child-item<?php menu_focus('themes') ?>">
                             <a class="nav-child-link" href="themes.php">主题</a>
                         </li>
                         <!-- 触发一个钩子 -->
                         <?php pluginManager::trigger('admin_navbar_console') ?>
                     </ul>
                 </li>
-                <li class="nav-item<?php $func->focus('create') ?>">
+                <li class="nav-item<?php menu_focus('create') ?>">
                     <a class="nav-link" href="create-post.php">创作</a>
                     <ul class="nav-child">
-                        <li class="nav-child-item<?php $func->focus('post') ?>">
+                        <li class="nav-child-item<?php menu_focus('post') ?>">
                             <a class="nav-child-link" href="create-post.php">创作文章</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('page') ?>">
+                        <li class="nav-child-item<?php menu_focus('page') ?>">
                             <a class="nav-child-link" href="./create-page.php">创建页面</a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item<?php $func->focus('manage') ?>">
+                <li class="nav-item<?php menu_focus('manage') ?>">
                     <a class="nav-link" href="manage-posts.php">管理</a>
                     <ul class="nav-child">
-                        <li class="nav-child-item<?php $func->focus('posts') ?>">
+                        <li class="nav-child-item<?php menu_focus('posts') ?>">
                             <a class="nav-child-link" href="manage-posts.php">文章</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('pages') ?>">
+                        <li class="nav-child-item<?php menu_focus('pages') ?>">
                             <a class="nav-child-link" href="manage-pages.php">页面</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('categories') ?>">
+                        <li class="nav-child-item<?php menu_focus('categories') ?>">
                             <a class="nav-child-link" href="manage-categories.php">分类</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('files') ?>">
+                        <li class="nav-child-item<?php menu_focus('files') ?>">
                             <a class="nav-child-link" href="manage-files.php">文件</a>
                         </li>
                     </ul>
                 </li>
-                <li class="nav-item<?php $func->focus('options') ?>">
+                <li class="nav-item<?php menu_focus('options') ?>">
                     <a class="nav-link" href="options-general.php">设置</a>
                     <ul class="nav-child">
-                        <li class="nav-child-item<?php $func->focus('general') ?>">
+                        <li class="nav-child-item<?php menu_focus('general') ?>">
                             <a class="nav-child-link" href="options-general.php">基本设置</a>
                         </li>
-                        <li class="nav-child-item<?php $func->focus('smtp') ?>">
+                        <li class="nav-child-item<?php menu_focus('smtp') ?>">
                             <a class="nav-child-link" href="options-smtp.php">SMTP 设置</a>
                         </li>
                     </ul>

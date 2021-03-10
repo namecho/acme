@@ -11,4 +11,13 @@
 </head>
 
 <body>
-    <?php $this->script('js/index.js'); ?>
+    <nav class="nav">
+        <h1 class="title">ACME</h1>
+        <ul class="nav-list">
+            <li class="nav-item"><a class="nav-link" href="">首页</a></li>
+            <li class="nav-item"><a class="nav-link" href="">吐槽</a></li>
+            <li class="nav-item"><a class="nav-link" href="">归档</a></li>
+            <li class="nav-item"><a class="nav-link" href="">友链</a></li>
+            <li class="nav-item"><a class="nav-link" href="">关于</a></li>
+        </ul>
+    </nav>
