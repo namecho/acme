@@ -7,11 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <?php $this->stylesheet('style.css'); ?>
+    <?php $this->stylesheet('css/style.css'); ?>
 </head>
 
 <body>
-    <?php $this->script('index.js'); ?>
-</body>
-
-</html>
+    <?php $this->script('js/index.js'); ?>

@@ -7,6 +7,7 @@ class Controller
     public function __construct()
     {
         $this->theme = WidgetManager::widget('Theme');
+        $this->need('functions.php');
     }
 
     /**
@@ -30,13 +31,16 @@ class Controller
     }
 
     /**
-     * 获取主题文件
+     * 导入主题文件
      *
      * @param string $fileName 文件名
      */
     public function need($fileName)
     {
-        require $this->theme->themeDir . $fileName;
+        $filePath = $this->theme->themeDir . $fileName;
+        if (file_exists($filePath)) {
+            include $filePath;
+        }
     }
 
     public function __call($name, $arguments)

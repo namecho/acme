@@ -1,13 +1,8 @@
 <?php if (!defined('ROOT_PATH')) exit;
 class Home extends Controller
 {
-    public function index($param)
+    public function index($params)
     {
-        print_r($param);
-        include ROOT_PATH . 'content/themes/default/index.php';
-    }
-    public function say()
-    {
-        return 'hello';
+        $this->need((!empty($params[0]) ? $params[0] : 'index') . '.php');
     }
 }

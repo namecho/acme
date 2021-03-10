@@ -26,6 +26,7 @@ $func = WidgetManager::widget('Admin');
                         <li class="nav-child-item<?php $func->focus('themes') ?>">
                             <a class="nav-child-link" href="themes.php">主题</a>
                         </li>
+                        <!-- 触发一个钩子 -->
                         <?php pluginManager::trigger('admin_navbar_console') ?>
                     </ul>
                 </li>
