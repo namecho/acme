@@ -15,3 +15,6 @@ define('DB_PREFIX', 'acme_');
 
 /** 插件目录 */
 define('PLUGIN_PATH', ROOT_PATH . 'content/plugins/');
+
+/** 基本入口 */
+define('HOME_ENTRY', '/index.php');

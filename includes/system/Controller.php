@@ -17,7 +17,7 @@ class Controller
      */
     public function stylesheet($fileName)
     {
-        echo "<link rel='stylesheet' href='/content/themes/{$this->theme->themeName}/{$fileName}'>";
+        echo "<link rel='stylesheet' href='/content/themes/{$this->theme->themeName}/{$fileName}'>\n";
     }
 
     /**
@@ -27,7 +27,7 @@ class Controller
      */
     public function script($fileName)
     {
-        echo "<script src='/content/themes/{$this->theme->themeName}/{$fileName}'></script>";
+        echo "<script src='/content/themes/{$this->theme->themeName}/{$fileName}'></script>\n";
     }
 
     /**
@@ -41,6 +41,17 @@ class Controller
         if (file_exists($filePath)) {
             include $filePath;
         }
+    }
+
+    /**
+     * 获取站点 url
+     *
+     * @param string $fileName 文件名
+     */
+    public function url($path = '')
+    {
+        $path = trim($path, '/');
+        echo HOME_ENTRY . "/{$path}";
     }
 
     public function __call($name, $arguments)

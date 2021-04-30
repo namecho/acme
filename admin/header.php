@@ -34,7 +34,7 @@
                             <a class="nav-child-link" href="create-post.php">创作文章</a>
                         </li>
                         <li class="nav-child-item<?php menu_focus('page') ?>">
-                            <a class="nav-child-link" href="./create-page.php">创建页面</a>
+                            <a class="nav-child-link" href="create-page.php">创建页面</a>
                         </li>
                     </ul>
                 </li>
