@@ -16,16 +16,16 @@ class Router
     /** 路由分发 */
     public static function dispatch()
     {
-
         self::match();
-        $consrollerName = ucfirst(strtolower(self::$route[0]));
+        print_r(self::$route);
+        $consrollerName = ucfirst(strtolower(isset(self::$route[0]) ? self::$route[0] : 'home'));
         $consrollerPath = ROOT_PATH . 'includes/controllers/' . $consrollerName . '.php';
+        $methodName = isset(self::$route[1]) ? self::$route[1] : 'index';
         if (file_exists($consrollerPath)) {
             include $consrollerPath;
-            (new $consrollerName())->index(array_splice(self::$route, 1));
+            (new $consrollerName())->$methodName(array_splice(self::$route, 2));
         } else {
-            include ROOT_PATH . 'includes/controllers/Home.php';
-            (new Home())->index(self::$route);
+            include ROOT_PATH . 'includes/controllers/No.php';
         }
     }
 
